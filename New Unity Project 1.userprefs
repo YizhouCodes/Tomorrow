@@ -1,0 +1,14 @@
+﻿<Properties StartupItem="Assembly-CSharp.csproj">
+  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" PreferredExecutionTarget="Unity.Instance.Unity Editor" />
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\GoogleGoMap\Instructions.txt">
+    <Files>
+      <File FileName="Assets\GoogleGoMap\Scripts\GameManager.cs" Line="27" Column="76" />
+      <File FileName="Assets\GoogleGoMap\README.txt" Line="1" Column="1" />
+      <File FileName="Assets\GoogleGoMap\Instructions.txt" Line="5" Column="91" />
+    </Files>
+  </MonoDevelop.Ide.Workbench>
+  <MonoDevelop.Ide.DebuggingService.Breakpoints>
+    <BreakpointStore />
+  </MonoDevelop.Ide.DebuggingService.Breakpoints>
+  <MonoDevelop.Ide.DebuggingService.PinnedWatches />
+</Properties>
