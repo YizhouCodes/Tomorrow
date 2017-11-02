@@ -4,7 +4,6 @@
 /[Bb]uild/
 /[Bb]uilds/
 /Assets/AssetStoreTools*
-/Assets/Resources/mapBig.txt
 
 # Visual Studio 2015 cache directory
 /.vs/
@@ -33,3 +32,13 @@ sysinfo.txt
 # Builds
 *.apk
 *.unitypackage
+
+# OS Generated
+.DS_Store
+.DS_Store?
+._*
+.Spotlight-V100
+.Trashes
+Icon?
+ehthumbs.db
+Thumbs.db
