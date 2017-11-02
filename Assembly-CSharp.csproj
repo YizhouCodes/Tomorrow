@@ -78,6 +78,7 @@
      <Compile Include="Assets\Scripts\InputManager.cs" />
      <Compile Include="Assets\Scripts\MapCameraController.cs" />
      <Compile Include="Assets\Scripts\PlayerData.cs" />
+     <Compile Include="Assets\Scripts\SetPlayerColor.cs" />
      <Compile Include="Assets\Scripts\SetUsername.cs" />
      <Compile Include="Assets\Scripts\VisitHotspot.cs" />
      <None Include="Assets\Resources\map.txt" />

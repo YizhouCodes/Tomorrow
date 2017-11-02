@@ -4,4 +4,5 @@ public class PlayerData
     public string username;
     public Hotspot[] hotspots;
     public int visited_count;
+    public string player_color;
 }
