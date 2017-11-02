@@ -37,7 +37,16 @@ public class MapCameraController : MonoBehaviour
         cameraTransform.SetParent(transform);
         cameraTransform.position = playerTransform.position - playerTransform.forward * cameraDistance + new Vector3(0, minZoomHeight + (maxZoomHeight - minZoomHeight) / 2, 0);
         Zoom(0);
+
+		InputManager.Instance.pinch += Zoom;
+		InputManager.Instance.rotate += RotateVertical;
     }
+
+	void OnDisable()
+	{
+		InputManager.Instance.pinch -= Zoom;
+		InputManager.Instance.rotate -= RotateVertical;
+	}
 
     //Moves the camera up or down and points the camera between players position and lookOverHeight
     public void Zoom(float amount)
@@ -55,14 +64,7 @@ public class MapCameraController : MonoBehaviour
 
     public void MoveHorizontal(Vector2 direction)
     {
-        transform.Translate(transform.forward * direction.y);
-        transform.Translate(transform.right * direction.x);
-    }
-
-    void Update()
-    {
-        Zoom(Input.GetAxis("Mouse ScrollWheel") * 10);
-        RotateVertical(Input.GetAxis("Mouse X"));
-        MoveHorizontal(new Vector2(Input.GetAxis("Horizontal"), Input.GetAxis("Vertical")));
+		transform.Translate(Vector3.ProjectOnPlane(cameraTransform.forward, Vector3.up).normalized * direction.y);
+		transform.Translate(Vector3.ProjectOnPlane(cameraTransform.right, Vector3.up).normalized * direction.x);
     }
 }
