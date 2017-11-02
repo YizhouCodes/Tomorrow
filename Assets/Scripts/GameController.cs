@@ -4,9 +4,7 @@ using System.IO;
 using System.Runtime.Serialization.Formatters.Binary;
 using UnityEngine;
 
-public class GameController : MonoBehaviour {
-
-	public static GameController instance;
+public class GameController : GenericSingleton<GameController> {
 
 	public int visited_count = 0;
 	public int hotspots_count;
@@ -24,15 +22,6 @@ public class GameController : MonoBehaviour {
 		Debug.Log(player_data.hotspots[1].visited);
 	}
 
-	void Awake () {
-		if (instance == null) {
-			DontDestroyOnLoad(gameObject);
-			instance = this;
-		}
-		else if (instance != this) {
-			Destroy(gameObject);
-		}
-	}
 
 	// If it's the first time that user opens the game, it calls FirstLoad function
 	// otherwise, it loads the saved data from `playerInfo.dat` file
