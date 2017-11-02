@@ -6,7 +6,7 @@ public class SetPlayerColor {
 
 	// It's saving the passed username
 	public void call (string color) {
-		GameController.Instance.player_data.player_color = color;
-		GameController.Instance.Save();
+		DataController.Instance.player_data.player_color = color;
+		DataController.Instance.Save();
 	}
 }

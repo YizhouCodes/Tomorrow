@@ -6,8 +6,8 @@ public class SetUsername {
 
 	// It's saving the passed username
 	public void call (string username) {
-		GameController.Instance.player_data.username = username;
-		GameController.Instance.Save();
+		DataController.Instance.player_data.username = username;
+		DataController.Instance.Save();
 	}
 
 }

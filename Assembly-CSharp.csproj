@@ -72,7 +72,7 @@
      <Compile Include="Assets\Map\Scripts\TestScriptEditor.cs" />
      <Compile Include="Assets\Map\Scripts\Triangulator.cs" />
      <Compile Include="Assets\Map\Scripts\XmlGetter.cs" />
-     <Compile Include="Assets\Scripts\GameController.cs" />
+     <Compile Include="Assets\Scripts\DataController.cs" />
      <Compile Include="Assets\Scripts\GenericSingleton.cs" />
      <Compile Include="Assets\Scripts\Hotspot.cs" />
      <Compile Include="Assets\Scripts\InputManager.cs" />

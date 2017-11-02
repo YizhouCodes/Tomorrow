@@ -10,7 +10,7 @@ public class VisitHotspot {
 	// Called when a hotspot needs to be marked as visited
 	// changes the `visited` value to true
 	public void call (int hotspot_id) {
-		player_data = GameController.Instance.player_data;
+		player_data = DataController.Instance.player_data;
 		foreach (Hotspot hotspot in player_data.hotspots) {
 			if (hotspot_id == hotspot.id) {
 				hotspot.visited = true;
@@ -19,7 +19,7 @@ public class VisitHotspot {
 				break;
 			}
 		}
-		GameController.Instance.Save();
+		DataController.Instance.Save();
 	}
 
 	private void setProgress () {

@@ -4,7 +4,7 @@ using System.IO;
 using System.Runtime.Serialization.Formatters.Binary;
 using UnityEngine;
 
-public class GameController : GenericSingleton<GameController> {
+public class DataController : GenericSingleton<DataController> {
 
 	public PlayerData player_data;
 
