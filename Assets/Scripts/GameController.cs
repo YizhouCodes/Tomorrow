@@ -6,20 +6,21 @@ using UnityEngine;
 
 public class GameController : GenericSingleton<GameController> {
 
-	public int visited_count = 0;
-	public int hotspots_count;
 	public PlayerData player_data;
 
 	private string jsonString;
-	private Hotspot visited_hotspot;
 
 	// Calls Load() function
 	void Start () {
 		Load();
-		Debug.Log(player_data.hotspots[1].visited);
-		VisitHotspot visit = new VisitHotspot();
-		visit.call(123);
-		Debug.Log(player_data.hotspots[1].visited);
+		// Debug.Log("USERNAME: " + player_data.username);
+		// SetUsername setting = new SetUsername();
+		// setting.call("Tomorrow!");
+		// Debug.Log("USERNAME: " + player_data.username);
+		// Debug.Log(player_data.hotspots[1].visited);
+		// VisitHotspot visit = new VisitHotspot();
+		// visit.call(123);
+		// Debug.Log(player_data.hotspots[1].visited);
 	}
 
 
@@ -43,7 +44,6 @@ public class GameController : GenericSingleton<GameController> {
 	void FirstLoad () {
 		jsonString = File.ReadAllText(Application.dataPath + "/Resources/hotspots_list.json");
 		player_data = JsonUtility.FromJson<PlayerData>(jsonString);
-		hotspots_count = player_data.hotspots.Length;
 		BinaryFormatter bf = new BinaryFormatter();
 		FileStream file = File.Create(Application.persistentDataPath + "/playerData.dat");
 		bf.Serialize(file, player_data);

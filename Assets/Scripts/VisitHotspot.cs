@@ -11,11 +11,10 @@ public class VisitHotspot {
 	// changes the `visited` value to true
 	public void call (int hotspot_id) {
 		player_data = GameController.Instance.player_data;
-		visited_count = GameController.Instance.visited_count;
 		foreach (Hotspot hotspot in player_data.hotspots) {
 			if (hotspot_id == hotspot.id) {
 				hotspot.visited = true;
-				visited_count++;
+				player_data.visited_count++;
 				break;
 			}
 		}
