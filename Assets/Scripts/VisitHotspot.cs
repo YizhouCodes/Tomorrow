@@ -15,9 +15,14 @@ public class VisitHotspot {
 			if (hotspot_id == hotspot.id) {
 				hotspot.visited = true;
 				player_data.visited_count++;
+				setProgress();
 				break;
 			}
 		}
 		GameController.Instance.Save();
+	}
+
+	private void setProgress () {
+		player_data.progress = (float)player_data.visited_count/player_data.hotspots_count;
 	}
 }

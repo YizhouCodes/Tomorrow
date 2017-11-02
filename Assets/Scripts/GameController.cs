@@ -18,9 +18,11 @@ public class GameController : GenericSingleton<GameController> {
 		// setting.call("Tomorrow!");
 		// Debug.Log("USERNAME: " + player_data.username);
 		// Debug.Log(player_data.hotspots[1].visited);
+		// Debug.Log(player_data.progress);
 		// VisitHotspot visit = new VisitHotspot();
 		// visit.call(123);
 		// Debug.Log(player_data.hotspots[1].visited);
+		// Debug.Log(player_data.progress);
 	}
 
 
@@ -44,6 +46,7 @@ public class GameController : GenericSingleton<GameController> {
 	void FirstLoad () {
 		jsonString = File.ReadAllText(Application.dataPath + "/Resources/hotspots_list.json");
 		player_data = JsonUtility.FromJson<PlayerData>(jsonString);
+		player_data.hotspots_count = player_data.hotspots.Length;
 		BinaryFormatter bf = new BinaryFormatter();
 		FileStream file = File.Create(Application.persistentDataPath + "/playerData.dat");
 		bf.Serialize(file, player_data);
