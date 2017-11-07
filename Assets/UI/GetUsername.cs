@@ -13,8 +13,6 @@ public class GetUsername : MonoBehaviour
     {
         if (input.text.Length > 0)
         {
-            SetUsername su = new SetUsername();
-            su.call(input.text);
             button.interactable = true;
         }
         else if (input.text.Length == 0)
@@ -24,11 +22,21 @@ public class GetUsername : MonoBehaviour
         }
     }
 
+    // Handles the persistence of username.
+    void Persist(InputField input)
+    {
+        if (input.text.Length > 0)
+        {
+            SetUsername su = new SetUsername();
+            su.call(input.text);
+        }
+    }
+
     public void Start()
     {
         invalidName.enabled = false;
-        //Adds a listener that invokes the "Validate" method when the player finishes editing the main input field.
-        //Passes the main input field into the method when "Validate" is invoked
-        mainInputField.onEndEdit.AddListener(delegate { Validate(mainInputField); });
+
+        mainInputField.onValueChanged.AddListener(delegate { Validate(mainInputField); });
+        mainInputField.onEndEdit.AddListener(delegate { Persist(mainInputField); });
     }
 }
