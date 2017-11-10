@@ -14,6 +14,7 @@ public class GetUsername : MonoBehaviour
         if (input.text.Length > 0)
         {
             button.interactable = true;
+            invalidName.enabled = false;
         }
         else if (input.text.Length == 0)
         {
@@ -37,6 +38,7 @@ public class GetUsername : MonoBehaviour
         invalidName.enabled = false;
 
         mainInputField.onValueChanged.AddListener(delegate { Validate(mainInputField); });
+        mainInputField.onEndEdit.AddListener(delegate { Validate(mainInputField); });
         mainInputField.onEndEdit.AddListener(delegate { Persist(mainInputField); });
     }
 }
