@@ -1,4 +1,6 @@
-﻿using System.Collections;
+﻿using Maps;
+using System;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -6,6 +8,7 @@ public class MapCameraController : MonoBehaviour
 {
     public GameObject playerPrefab;
     public Transform cameraTransform;
+    public MapFunctionality map;
 
     [Range(0, 5)]
     public float lookOverHeight;
@@ -19,7 +22,15 @@ public class MapCameraController : MonoBehaviour
     [Range(0, 50)]
     public float cameraDistance;
 
-    private Transform playerTransform;
+    [Range(100, 4000)]
+    public int radius;
+
+    [Range(100, 4000)]
+    public int refreshTreshold;
+
+    Transform playerTransform;
+
+    Vector3 lastPosition = Vector3.zero;
 
     //Disable this script if no camera is set or if no player prefab is given
     //Set the cameras position and rotation
@@ -34,19 +45,27 @@ public class MapCameraController : MonoBehaviour
         if (playerTransform == null)
             playerTransform = Instantiate(playerPrefab, transform).transform;
 
-        cameraTransform.SetParent(transform);
+        cameraTransform.SetParent(playerTransform);
         cameraTransform.position = playerTransform.position - playerTransform.forward * cameraDistance + new Vector3(0, minZoomHeight + (maxZoomHeight - minZoomHeight) / 2, 0);
         Zoom(0);
 
 		InputManager.Instance.pinch += Zoom;
 		InputManager.Instance.rotate += RotateVertical;
+        InputManager.Instance.locationChanged += UpdateLocation;
     }
 
-	void OnDisable()
+    private void UpdateLocation(float lon, float lat)
+    {
+        map.ShowMapArea(lon, lat, radius);
+        //transform.localPosition = map.MapPositionAt(lon, lat);
+    }
+
+    void OnDisable()
 	{
 		InputManager.Instance.pinch -= Zoom;
 		InputManager.Instance.rotate -= RotateVertical;
-	}
+        InputManager.Instance.locationChanged -= UpdateLocation;
+    }
 
     //Moves the camera up or down and points the camera between players position and lookOverHeight
     public void Zoom(float amount)
