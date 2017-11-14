@@ -9,8 +9,36 @@ public class InputManager : GenericSingleton<InputManager>
 	public event Action<float> rotate;
 	public event Action<Vector2> click;
 	public event Action<Vector2> doubleClick;
+    public event Action<float, float> locationChanged;
 
-	void Update()
+    float longitude, latitude;
+
+    private void Start()
+    {
+        StartCoroutine(StartLocationService());
+    }
+
+    private IEnumerator StartLocationService()
+    {
+        if (!Input.location.isEnabledByUser)
+        {
+            yield break;
+        }
+        Input.location.Start();
+        int maxWait = 10;
+        while (Input.location.status == LocationServiceStatus.Initializing && maxWait > 0)
+        {
+            yield return new WaitForSeconds(1);
+            maxWait--;
+        }
+        if(maxWait <= 0 || Input.location.status == LocationServiceStatus.Failed)
+        {
+            yield break;
+        }
+        locationChanged(Input.location.lastData.longitude, Input.location.lastData.latitude);
+    }
+
+    void Update()
 	{
 		if (Input.touchCount == 0)
 			KeyboardInput ();
