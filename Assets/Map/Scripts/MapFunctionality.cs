@@ -25,11 +25,7 @@ namespace Maps{
         
         private void Awake()
         {
-            buildingsHolder = PrimeTransform("Buildings", transform.localScale, transform);
-            areasHolder = PrimeTransform("Areas", transform.localScale, transform);
-            linesHolder = PrimeTransform("Lines", transform.localScale, transform);
             primeMaterials();
-            //ShowMapArea(new Vector3(0,0,0), 2000);
         }
         
         public void SetMapFunctionality(Bounds bounds, Way[] buildings, Way[] areas, Way[] lines)
@@ -46,6 +42,7 @@ namespace Maps{
 
         public void ShowMapArea(Vector3 position, float radius)
         {
+            primeHolders();
             foreach (Way building in Buildings)
             {
                 if (Vector3.Distance(building.Center - Center, position) < radius)
@@ -138,6 +135,25 @@ namespace Maps{
                 material.SetColor("_Color", colors[i]);
                 materials[i] = material;
             }
+        }
+
+        void primeHolders()
+        {
+            if(buildingsHolder != null)
+            {
+                Destroy(buildingsHolder.gameObject);
+            }
+            if (areasHolder != null)
+            {
+                Destroy(areasHolder.gameObject);
+            }
+            if (linesHolder != null)
+            {
+                Destroy(linesHolder.gameObject);
+            }
+            buildingsHolder = PrimeTransform("Buildings", transform.localScale, transform);
+            areasHolder = PrimeTransform("Areas", transform.localScale, transform);
+            linesHolder = PrimeTransform("Lines", transform.localScale, transform);
         }
     }
 }
