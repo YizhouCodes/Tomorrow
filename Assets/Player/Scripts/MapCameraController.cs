@@ -82,9 +82,7 @@ public class MapCameraController : MonoBehaviour
 
     public void ChangePosition(float lon, float lat)
     {
-        Vector3 position = map.MapPositionAt(lon, lat);
-        Vector3 mapScale = map.transform.localScale;
-        transform.position = new Vector3(position.x * mapScale.x, position.y * mapScale.y, position.z * mapScale.z);
+        transform.position = map.MapPositionAt(lon, lat);
         if (Vector3.Distance(transform.position, lastPosition) > refreshTreshold)
         {
             lastPosition = transform.position;

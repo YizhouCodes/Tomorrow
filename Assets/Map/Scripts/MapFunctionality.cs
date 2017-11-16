@@ -80,11 +80,11 @@ namespace Maps{
             bool inLon = lon >= MinLon && lon <= MaxLon;
             if (inLat && inLon)
             {
-                return new Vector3(
+                return Vector3.Scale(new Vector3(
                     (float)MercatorProjection.lonToX(lon),
                     transform.position.y,
                     (float)MercatorProjection.latToY(lat)
-                ) - Center;
+                ) - Center, transform.lossyScale);
             }
             else
             {
