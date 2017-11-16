@@ -11,7 +11,7 @@ public class DataController : GenericSingleton<DataController> {
 	private string jsonString;
 
 	// Calls Load() function
-	void Start () {
+	void Awake () {
 		Load();
 		// Debug.Log("USERNAME: " + player_data.username);
 		// SetUsername setting = new SetUsername();
@@ -59,5 +59,7 @@ public class DataController : GenericSingleton<DataController> {
 		FileStream file = File.Open(Application.persistentDataPath + "/playerData.dat", FileMode.Open);
 		bf.Serialize(file, player_data);
 		file.Close();
-	}
+        // Debug.Log(player_data.hotspots[0].visited);
+        // Debug.Log(player_data.hotspots[1].visited);
+    }
 }
