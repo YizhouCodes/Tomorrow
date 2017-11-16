@@ -59,5 +59,7 @@ public class DataController : GenericSingleton<DataController> {
 		FileStream file = File.Open(Application.persistentDataPath + "/playerData.dat", FileMode.Open);
 		bf.Serialize(file, player_data);
 		file.Close();
-	}
+        // Debug.Log(player_data.hotspots[0].visited);
+        // Debug.Log(player_data.hotspots[1].visited);
+    }
 }
