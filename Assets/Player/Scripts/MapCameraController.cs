@@ -23,7 +23,7 @@ public class MapCameraController : MonoBehaviour
     [Range(100, 4000)]
     public int refreshTreshold;
 
-    Transform playerTransform;
+    public Transform playerTransform;
     Vector3 lastPosition;
 
     private void Start()
@@ -45,9 +45,9 @@ public class MapCameraController : MonoBehaviour
             return;
         }
 
-        if (playerTransform == null)
-            playerTransform = Instantiate(playerPrefab, transform).transform;
-
+        //if (playerTransform == null)
+        //   playerTransform = Instantiate(playerPrefab, transform).transform;
+        playerTransform.parent = transform;
         cameraTransform.SetParent(playerTransform);
         cameraTransform.position = playerTransform.position - playerTransform.forward * cameraDistance + new Vector3(0, minZoomHeight + (maxZoomHeight - minZoomHeight) / 2, 0);
         Zoom(0);

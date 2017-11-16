@@ -11,7 +11,7 @@ public class DataController : GenericSingleton<DataController> {
 	private string jsonString;
 
 	// Calls Load() function
-	void Start () {
+	void Awake () {
 		Load();
 		// Debug.Log("USERNAME: " + player_data.username);
 		// SetUsername setting = new SetUsername();
