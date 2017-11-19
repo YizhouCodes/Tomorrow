@@ -9,39 +9,46 @@ public class InputManager : GenericSingleton<InputManager>
 	public event Action<float> rotate;
     public event Action<float, float> locationChanged;
     public event Action<Vector3> move;
-    public bool isEditor;
+    public bool isEditor = false;
 
     float longitude, latitude;
 
     private void Start()
     {
         isEditor = Application.isEditor;
-        if (isEditor)
-        {
-            StartLocationService();
-        }
+        StartCoroutine(StartLocationService());
     }
 
     private IEnumerator StartLocationService()
     {
         if (!Input.location.isEnabledByUser)
         {
-            Debug.Log("jee");
+            Debug.Log("Gps not enabled");
             yield break;
         }
+
         Input.location.Start();
-        int maxWait = 10;
+        int maxWait = 20;
+
         while (Input.location.status == LocationServiceStatus.Initializing && maxWait > 0)
         {
             yield return new WaitForSeconds(1);
             maxWait--;
         }
-        if(maxWait <= 0 || Input.location.status == LocationServiceStatus.Failed)
+
+        if (maxWait <= 0)
         {
-            Debug.Log("joo");
+            Debug.Log("Timed out");
             yield break;
         }
-        locationChanged(Input.location.lastData.longitude, Input.location.lastData.latitude);
+
+        if (Input.location.status == LocationServiceStatus.Failed)
+        {
+            Debug.Log("Unable to determine location");
+            yield break;
+        }
+
+        yield break;
     }
 
     void Update()
@@ -58,9 +65,9 @@ public class InputManager : GenericSingleton<InputManager>
 
 	void EditorInput()
 	{
-		pinch (Input.GetAxis("Mouse ScrollWheel") * 10);
-		rotate (Input.GetAxis("Mouse X"));
-        move(new Vector3(Input.GetAxis("Horizontal"), 0 , Input.GetAxis("Vertical")));
+		Pinch (Input.GetAxis("Mouse ScrollWheel") * 10);
+		Rotate (Input.GetAxis("Mouse X"));
+        Move(new Vector3(Input.GetAxis("Horizontal"), 0 , Input.GetAxis("Vertical")));
 	}
 
 	void MobileInput()
@@ -68,8 +75,16 @@ public class InputManager : GenericSingleton<InputManager>
         Touch[] touches = Input.touches;
 		if (Input.touchCount == 2 && (touches[0].phase == TouchPhase.Moved || touches[1].phase == TouchPhase.Moved))
             TouchPinchAndRotate(touches[0], touches[1]);
-        locationChanged(Input.location.lastData.longitude, Input.location.lastData.latitude);
-	}
+
+        float lon = Input.location.lastData.longitude;
+        float lat = Input.location.lastData.latitude;
+        if (lon != longitude || lat != latitude)
+        {
+            longitude = lon;
+            latitude = lat;
+            locationChanged(longitude, latitude);
+        }
+    }
 
     //Handles multitouch zoom and rotation
     void TouchPinchAndRotate(Touch touch0, Touch touch1)
@@ -79,7 +94,7 @@ public class InputManager : GenericSingleton<InputManager>
             (touch1.position - touch1.deltaPosition);
 
         //Zoom
-        pinch((prevTouch.magnitude - touch.magnitude) * 0.2f);
+        Pinch((prevTouch.magnitude - touch.magnitude) * 0.2f);
 
         //Rotation
         touch = touch.x > 0 ? touch : -touch;
@@ -87,6 +102,38 @@ public class InputManager : GenericSingleton<InputManager>
 
         float amount = Vector2.Dot(Vector2.up, touch.normalized) - Vector2.Dot(Vector2.up, prevTouch.normalized);
         if (Mathf.Abs(amount) <= 1)
-            rotate(amount * 100);
+            Rotate(amount * 100);
+    }
+
+    void Pinch(float amount)
+    {
+        if(pinch != null)
+        {
+            pinch(amount);
+        }
+    }
+
+    void Rotate(float amount)
+    {
+        if (rotate != null)
+        {
+            rotate(amount);
+        }
+    }
+
+    void LocationChanged(float lon, float lat)
+    {
+        if (locationChanged != null)
+        {
+            locationChanged(lon, lat);
+        }
+    }
+
+    void Move(Vector3 vec)
+    {
+        if (move != null)
+        {
+            move(vec);
+        }
     }
 }

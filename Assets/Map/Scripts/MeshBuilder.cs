@@ -106,11 +106,11 @@ namespace Maps
                 Vector3 right;
                 if (i == 0)
                 {
-                    right = Vector3.Cross(line[i] - line[i + 1], Vector3.up).normalized + heightVector;
+                    right = Vector3.Cross(line[i] - line[i + 1], Vector3.up).normalized;
                 }
                 else if (i == line.Count - 1)
                 {
-                    right = Vector3.Cross(line[i - 1] - line[i], Vector3.up).normalized + heightVector;
+                    right = Vector3.Cross(line[i - 1] - line[i], Vector3.up).normalized;
                 }
                 else
                 {
@@ -135,8 +135,8 @@ namespace Maps
                     }
                     halfWidth = halfWidth * (1 + 1 - Vector3.Angle(previous, next) / 180);
                 }
-                vectors.Add(line[i] + right * halfWidth);
-                vectors.Add(line[i] + right * -halfWidth);
+                vectors.Add(line[i] + right * halfWidth + heightVector);
+                vectors.Add(line[i] + right * -halfWidth + heightVector);
             }
 
             List<int> indices = new List<int>();
