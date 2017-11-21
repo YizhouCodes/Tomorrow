@@ -18,7 +18,6 @@ public class HotspotGenerator : MonoBehaviour {
         newHotspot.GetComponent<hotspot_transform>().player = player;
         newHotspot.GetComponent<DisplayUIOnClick>().far_screen = far_screen;
         newHotspot.GetComponent<DisplayUIOnClick>().close_screen = close_screen;
-        newHotspot.AddComponent<HotspotTapped>();
     }
 
     //Create all hotspots, even those outside of the map
