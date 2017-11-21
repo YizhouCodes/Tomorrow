@@ -21,11 +21,12 @@ namespace Maps{
         public float buildingHeightMultiplier = 1;
 
         Material[] materials;
-        Transform buildingsHolder, areasHolder, linesHolder;
+        Transform mapObjects;
         
         private void Awake()
         {
             primeMaterials();
+            primeMapObjects();
         }
         
         public void SetMapFunctionality(Bounds bounds, Way[] buildings, Way[] areas, Way[] lines)
@@ -40,14 +41,15 @@ namespace Maps{
             Lines = lines;
         }
 
-        public void ShowMapArea(Vector3 position, float radius)
+        public void ShowMapArea(Vector3 globalPosition, float radius)
         {
-            primeHolders();
+            primeMapObjects();
+            Vector3 position = mapObjects.transform.InverseTransformPoint(globalPosition);
             foreach (Way building in Buildings)
             {
                 if (Vector3.Distance(building.Center - Center, position) < radius)
                 {
-                    PrimeObject(building, building.Center, buildingsHolder).GetComponent<MeshFilter>().mesh =
+                    PrimeObject(building, building.Center, mapObjects).GetComponent<MeshFilter>().mesh =
                         MeshBuilder.SolidMeshFromOutline(GetLocalVectors(building.Nodes, building.Center), building.Height * buildingHeightMultiplier);
                 }
             }
@@ -55,7 +57,7 @@ namespace Maps{
             {
                 if (Vector3.Distance(area.Center - Center, position) < radius)
                 {
-                    PrimeObject(area, area.Center, areasHolder).GetComponent<MeshFilter>().mesh =
+                    PrimeObject(area, area.Center, mapObjects).GetComponent<MeshFilter>().mesh =
                         MeshBuilder.FlatMeshFromOutline(GetLocalVectors(area.Nodes, area.Center), area.Height);
                 }
             }
@@ -63,15 +65,10 @@ namespace Maps{
             {
                 if (Vector3.Distance(line.Center - Center, position) < radius)
                 {
-                    PrimeObject(line, line.Center, linesHolder).GetComponent<MeshFilter>().mesh =
+                    PrimeObject(line, line.Center, mapObjects).GetComponent<MeshFilter>().mesh =
                         MeshBuilder.MeshFromLine(GetLocalVectors(line.Nodes, line.Center), line.Width, line.Height);
                 }
             }
-        }
-
-        public void ShowMapArea(float lon, float lat, float radius)
-        {
-            ShowMapArea(MapPositionAt(lon, lat), radius);
         }
 
         public Vector3 MapPositionAt(float lon, float lat)
@@ -80,11 +77,11 @@ namespace Maps{
             bool inLon = lon >= MinLon && lon <= MaxLon;
             if (inLat && inLon)
             {
-                return Vector3.Scale(new Vector3(
+                return mapObjects.TransformPoint(new Vector3(
                     (float)MercatorProjection.lonToX(lon),
                     transform.position.y,
                     (float)MercatorProjection.latToY(lat)
-                ) - Center, transform.lossyScale);
+                ) - Center);
             }
             else
             {
@@ -137,23 +134,13 @@ namespace Maps{
             }
         }
 
-        void primeHolders()
+        void primeMapObjects()
         {
-            if(buildingsHolder != null)
+            if (mapObjects != null)
             {
-                Destroy(buildingsHolder.gameObject);
+                GameObject.Destroy(mapObjects.gameObject);
             }
-            if (areasHolder != null)
-            {
-                Destroy(areasHolder.gameObject);
-            }
-            if (linesHolder != null)
-            {
-                Destroy(linesHolder.gameObject);
-            }
-            buildingsHolder = PrimeTransform("Buildings", transform.localScale, transform);
-            areasHolder = PrimeTransform("Areas", transform.localScale, transform);
-            linesHolder = PrimeTransform("Lines", transform.localScale, transform);
+            mapObjects = PrimeTransform("MapObjects", transform.localScale, transform);
         }
     }
 }

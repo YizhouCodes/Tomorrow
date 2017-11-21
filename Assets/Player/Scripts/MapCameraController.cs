@@ -6,7 +6,7 @@ using UnityEngine;
 
 public class MapCameraController : MonoBehaviour
 {
-    public GameObject playerPrefab;
+    public Transform playerTransform;
     public Transform cameraTransform;
     public MapFunctionality map;
 
@@ -23,30 +23,25 @@ public class MapCameraController : MonoBehaviour
     [Range(100, 4000)]
     public int refreshTreshold;
 
-    public Transform playerTransform;
     Vector3 lastPosition;
 
     private void Start()
     {
-        if (!InputManager.Instance.isEditor)
-        {
-            lastPosition = Vector3.zero;
-            map.ShowMapArea(lastPosition, radius);
-        }
+        lastPosition = map.transform.position;
+        transform.position = map.transform.position;
+        map.ShowMapArea(lastPosition, radius);
     }
 
     //Disable this script if no camera is set or if no player prefab is given
     //Set the cameras position and rotation
     void OnEnable()
     {
-        if (cameraTransform == null || playerPrefab == null)
+        if (cameraTransform == null || playerTransform == null)
         {
             enabled = false;
             return;
         }
-
-        //if (playerTransform == null)
-        //   playerTransform = Instantiate(playerPrefab, transform).transform;
+        
         playerTransform.parent = transform;
         cameraTransform.SetParent(playerTransform);
         cameraTransform.position = playerTransform.position - playerTransform.forward * cameraDistance + new Vector3(0, minZoomHeight + (maxZoomHeight - minZoomHeight) / 2, 0);
@@ -77,7 +72,7 @@ public class MapCameraController : MonoBehaviour
 
     public void RotateVertical(float amount)
     {
-        cameraTransform.RotateAround(playerTransform.position, Vector2.up, amount);//.Rotate(Vector2.up * amount);
+        transform.RotateAround(transform.position, Vector2.up, amount);
     }
 
     public void ChangePosition(float lon, float lat)
@@ -86,7 +81,7 @@ public class MapCameraController : MonoBehaviour
         if (Vector3.Distance(transform.position, lastPosition) > refreshTreshold)
         {
             lastPosition = transform.position;
-            map.ShowMapArea(lon, lat, radius);
+            map.ShowMapArea(transform.position, radius);
         }
     }
 
@@ -96,9 +91,7 @@ public class MapCameraController : MonoBehaviour
         if (Vector3.Distance(transform.position, lastPosition) > refreshTreshold)
         {
             lastPosition = transform.position;
-            Vector3 mapScale = map.transform.localScale;
-            Vector3 position = transform.position;
-            map.ShowMapArea(new Vector3(position.x / mapScale.x, position.y / mapScale.y, position.z / mapScale.z), radius);
+            map.ShowMapArea(transform.position, radius);
         }
     }
 }
