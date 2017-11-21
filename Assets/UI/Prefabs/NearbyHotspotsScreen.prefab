@@ -160,6 +160,7 @@ GameObject:
   - component: {fileID: 223495295972005674}
   - component: {fileID: 114227540878040842}
   - component: {fileID: 114693621648619234}
+  - component: {fileID: 114310120686356844}
   m_Layer: 5
   m_Name: NearbyHotspot (close)
   m_TagString: Untagged
@@ -244,13 +245,14 @@ GameObject:
   - component: {fileID: 223760503289094426}
   - component: {fileID: 114202654091256112}
   - component: {fileID: 114884389179499964}
+  - component: {fileID: 114671427105127970}
   m_Layer: 5
   m_Name: NearbyHotspot (far)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!1 &1957140339832386
 GameObject:
   m_ObjectHideFlags: 1
@@ -312,7 +314,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1792074571999754}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 3438.9214, y: 1.5105991, z: -375.21866}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 224556898787607920}
@@ -594,6 +596,19 @@ MonoBehaviour:
     m_VerticalOverflow: 0
     m_LineSpacing: 1
   m_Text: X
+--- !u!114 &114310120686356844
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1583699893373990}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a6e3a614595d2e34e95b0994e4746494, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  description: {fileID: 114007812915138084}
+  title: {fileID: 114592226180791080}
 --- !u!114 &114342208380232568
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -828,6 +843,19 @@ MonoBehaviour:
   m_FillAmount: 1
   m_FillClockwise: 1
   m_FillOrigin: 0
+--- !u!114 &114671427105127970
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1918625223814320}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a6e3a614595d2e34e95b0994e4746494, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  description: {fileID: 114759484707240822}
+  title: {fileID: 114166005945847900}
 --- !u!114 &114693621648619234
 MonoBehaviour:
   m_ObjectHideFlags: 1
