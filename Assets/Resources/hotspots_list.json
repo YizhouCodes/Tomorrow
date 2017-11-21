@@ -1,19 +1,139 @@
 {
   "hotspots": [
     {
-      "id": 32453,
-      "name": "NAME 1",
-      "description": "DESC1",
-      "latitude": 23.532343,
-      "longitude": 212.467,
+      "id": 100,
+      "name": "The Tunnel",
+      "description": "This is THE TUNNEL",
+      "latitude": 61.494117,
+      "longitude": 23.778432,
       "visited": false
     },
     {
-      "id": 123,
-      "name": "NAME 2",
-      "description": "DESC2",
-      "latitude": 23.532343,
-      "longitude": 212.467,
+      "id": 1,
+      "name": "Pinni B Entrance",
+      "description": "",
+      "latitude": 61.493299,
+      "longitude": 23.777682,
+      "visited": false
+    },
+    {
+      "id": 2,
+      "name": "Obelisk",
+      "description": "",
+      "latitude": 61.493710,
+      "longitude": 23.777932,
+      "visited": false
+    },
+    {
+      "id": 3,
+      "name": "Pinni A Entrance",
+      "description": "",
+      "latitude": 61.493994,
+      "longitude": 23.778075,
+      "visited": false
+    },
+    {
+      "id": 4,
+      "name": "Main building Entrance",
+      "description": "",
+      "latitude": 61.494389,
+      "longitude": 23.780310,
+      "visited": false
+    },
+    {
+      "id": 5,
+      "name": "Linna Entrance",
+      "description": "",
+      "latitude": 61.494982,
+      "longitude": 23.778025,
+      "visited": false
+    },
+    {
+      "id": 6,
+      "name": "Uta health services",
+      "description": "",
+      "latitude": 61.494952,
+      "longitude": 23.777371,
+      "visited": false
+    },
+    {
+      "id": 7,
+      "name": "Uta student council",
+      "description": "",
+      "latitude": 61.495139,
+      "longitude": 23.779610,
+      "visited": false
+    },
+    {
+      "id": 8,
+      "name": "Uta amphitheatre",
+      "description": "",
+      "latitude": 61.493136,
+      "longitude": 23.778121,
+      "visited": false
+    },
+    {
+      "id": 9,
+      "name": "Uta parking lot",
+      "description": "",
+      "latitude": 61.492678,
+      "longitude": 23.779312,
+      "visited": false
+    },
+    {
+      "id": 10,
+      "name": "Tieto Pinni",
+      "description": "",
+      "latitude": 61.492868,
+      "longitude": 23.778332,
+      "visited": false
+    },
+    {
+      "id": 1,
+      "name": "Atalpa",
+      "description": "",
+      "latitude": 61.492697,
+      "longitude": 23.780845,
+      "visited": false
+    },
+    {
+      "id": 12,
+      "name": "Main Entrance statue",
+      "description": "",
+      "latitude": 61.494630,
+      "longitude": 23.780170,
+      "visited": false
+    },
+    {
+      "id": 13,
+      "name": "Uta tennis field",
+      "description": "",
+      "latitude": 61.493178,
+      "longitude": 23.779976,
+      "visited": false
+    },
+    {
+      "id": 14,
+      "name": "Tampere talo",
+      "description": "",
+      "latitude": 61.496019,
+      "longitude": 23.780656,
+      "visited": false
+    },
+    {
+      "id": 15,
+      "name": "Sorsa puisto",
+      "description": "",
+      "latitude": 61.497493,
+      "longitude": 23.782794,
+      "visited": false
+    },
+    {
+      "id": 16,
+      "name": "TOAS",
+      "description": "",
+      "latitude": 61.491148,
+      "longitude": 23.784268,
       "visited": false
     }
   ]

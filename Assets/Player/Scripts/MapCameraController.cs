@@ -41,9 +41,8 @@ public class MapCameraController : MonoBehaviour
             enabled = false;
             return;
         }
-
+        
         playerTransform.parent = transform;
-
         cameraTransform.SetParent(playerTransform);
         cameraTransform.position = playerTransform.position - playerTransform.forward * cameraDistance + new Vector3(0, minZoomHeight + (maxZoomHeight - minZoomHeight) / 2, 0);
         Zoom(0);
