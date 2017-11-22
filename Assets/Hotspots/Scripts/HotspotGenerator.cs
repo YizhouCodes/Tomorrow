@@ -15,7 +15,7 @@ public class HotspotGenerator : MonoBehaviour {
         GameObject newHotspot = Instantiate(hotspot, position, Quaternion.identity);
         newHotspot.name = id.ToString();
         newHotspot.GetComponent<DisplayUIOnClick>().player = player;
-        newHotspot.GetComponent<hotspot_transform>().player = player;
+        newHotspot.GetComponent<HotspotTransform>().player = player;
         newHotspot.GetComponent<DisplayUIOnClick>().far_screen = far_screen;
         newHotspot.GetComponent<DisplayUIOnClick>().close_screen = close_screen;
     }

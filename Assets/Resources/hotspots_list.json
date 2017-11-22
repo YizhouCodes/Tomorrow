@@ -1,6 +1,14 @@
 {
   "hotspots": [
     {
+      "id": 999,
+      "name": "TestSpot",
+      "description": "This is the test hotspot",
+      "latitude": 61.481608,
+      "longitude": 23.910688,
+      "visited": false
+    },
+    {
       "id": 100,
       "name": "The Tunnel",
       "description": "This is THE TUNNEL",
