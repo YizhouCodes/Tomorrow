@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using System;
 
 public class VisitButton : MonoBehaviour {
 
@@ -15,6 +16,6 @@ public class VisitButton : MonoBehaviour {
     private void ButtonOnClick(Button button)
     {
         VisitHotspot visit = new VisitHotspot();
-        //visit.call(HotspotTapped.lastTappedHotspot);
+        visit.call(DisplayUIOnClick.lastTappedHotspot);
     }
 }

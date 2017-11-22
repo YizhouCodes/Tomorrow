@@ -24,7 +24,8 @@ public class DisplayUIOnClick : MonoBehaviour {
     //Activates the nearby screens on tap
     void OnMouseDown()
     {
-        if(distance <= 5)
+        lastTappedHotspot = Int32.Parse(gameObject.name);
+        if (distance <= 5)
         {
             close_screen.SetActive(true);
             close_screen.GetComponent<NearbyScreenController>().title.text = DataController.Instance.player_data.FindHotspot(Int32.Parse(gameObject.name)).name;
