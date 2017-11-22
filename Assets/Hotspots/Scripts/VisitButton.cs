@@ -15,6 +15,6 @@ public class VisitButton : MonoBehaviour {
     private void ButtonOnClick(Button button)
     {
         VisitHotspot visit = new VisitHotspot();
-        visit.call(HotspotTapped.lastTappedHotspot);
+        //visit.call(HotspotTapped.lastTappedHotspot);
     }
 }

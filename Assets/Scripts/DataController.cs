@@ -44,7 +44,7 @@ public class DataController : GenericSingleton<DataController> {
 	// Gets called when user opens the app for the first time
 	// loads, parses and saves the json into `playerInfo.dat` file
 	void FirstLoad () {
-		jsonString = File.ReadAllText(Application.dataPath + "/Resources/hotspots_list.json");
+        jsonString = Resources.Load<TextAsset>("hotspots_list").text;
 		player_data = JsonUtility.FromJson<PlayerData>(jsonString);
 		player_data.hotspots_count = player_data.hotspots.Length;
 		BinaryFormatter bf = new BinaryFormatter();
