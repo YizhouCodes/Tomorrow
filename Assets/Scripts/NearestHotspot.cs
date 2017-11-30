@@ -1,20 +1,35 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using Maps;
+using System.Linq;
 
 public class NearestHotspot : MonoBehaviour {
 	public MapFunctionality map;
 	public GameObject player;
+    public Transform compass;
 
-	private Hotspot[] hotspots = DataController.Instance.player_data.hotspots;
-	private Dictionary<float, Hotspot> distances = new Dictionary<float, Hotspot>();
-	private Hotspot closestHotspot { get; }
+    private Hotspot[] hotspots;
+	private Dictionary<float, Hotspot> distances;
 	private float minimumDistance;
+    private Hotspot closestHotspot;
 
-	// Finds the minimum distance to the nearest hotspot and the hotspot itself
-	public void Call ()
+    private void Start()
+    {
+        hotspots = DataController.Instance.player_data.hotspots;
+    }
+    private void Update()
+    {
+        Call();
+        Vector3 hotspot_pos = map.MapPositionAt((float)closestHotspot.longitude, (float)closestHotspot.latitude);
+        compass.LookAt(hotspot_pos);
+    }
+
+    // Finds the minimum distance to the nearest hotspot and the hotspot itself
+    private void Call ()
 	{
-		foreach (Hotspot hotspot in hotspots) {
+        distances = new Dictionary<float, Hotspot>();
+        foreach (Hotspot hotspot in hotspots) {
 			distances.Add(CalculateDistance(hotspot), hotspot);
 		}
 		minimumDistance = distances.Keys.Min();
@@ -22,7 +37,7 @@ public class NearestHotspot : MonoBehaviour {
 	}
 
 	// Returns false if the player is too far from a hotspot, true otherwise
-	public boolean CloseEnough (float minimum)
+	private bool CloseEnough (float minimum)
 	{
 		if (minimum < minimumDistance) {
 			return false;
@@ -33,7 +48,7 @@ public class NearestHotspot : MonoBehaviour {
 	// Calculates the distance to the nearest hotspot
 	private float CalculateDistance (Hotspot hotspot)
 	{
-		Vector3 hotspot_pos = map.MapPositionAt(hotspot.longitude, hotspot.latitude);
+		Vector3 hotspot_pos = map.MapPositionAt((float)hotspot.longitude, (float)hotspot.latitude);
 		Vector3 player_pos = player.transform.position;
 		return Vector3.Distance(hotspot_pos, player_pos);
 	}
