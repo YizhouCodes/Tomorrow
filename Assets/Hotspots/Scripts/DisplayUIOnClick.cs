@@ -9,12 +9,6 @@ public class DisplayUIOnClick : MonoBehaviour {
     public float distance;
     public static int lastTappedHotspot;
 
-    float abs(float x)
-    {
-        if (x >= 0) return x;
-        else return x * -1;
-    }
-
     private void Start()
     {
         close_screen.SetActive(false);
@@ -43,6 +37,6 @@ public class DisplayUIOnClick : MonoBehaviour {
     {
         Vector3 PlayerPosition = player.transform.position;
         Vector3 HotspotPosition = transform.position;
-        distance = abs(PlayerPosition.x - HotspotPosition.x) + abs(PlayerPosition.z - HotspotPosition.z);
+        distance = Math.Abs(PlayerPosition.x - HotspotPosition.x) + Math.Abs(PlayerPosition.z - HotspotPosition.z);
     }
 }
