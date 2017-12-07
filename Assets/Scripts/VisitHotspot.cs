@@ -12,7 +12,8 @@ public class VisitHotspot {
 	public void call (int hotspot_id) {
 		player_data = DataController.Instance.player_data;
 		foreach (Hotspot hotspot in player_data.hotspots) {
-			if (hotspot_id == hotspot.id) {
+			// Finds the hotspot object if there's a non-visited one with that id
+			if (hotspot_id == hotspot.id && hotspot.visited == false) {
 				hotspot.visited = true;
 				player_data.visited_count++;
 				setProgress();
