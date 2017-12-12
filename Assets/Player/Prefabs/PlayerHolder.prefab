@@ -57,6 +57,6 @@ MonoBehaviour:
   lookOverHeight: 5
   minZoomHeight: 10
   maxZoomHeight: 150
-  cameraDistance: 50
+  cameraDistance: 30
   radius: 2000
   refreshTreshold: 100
