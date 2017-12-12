@@ -58,6 +58,7 @@ MonoBehaviour:
     hotspots_count: 0
     visited_count: 0
     player_color: 
+    player_character: 
     progress: 0
   obj: {fileID: 0}
 --- !u!114 &114716576243290568
