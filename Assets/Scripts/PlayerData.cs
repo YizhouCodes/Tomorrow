@@ -6,7 +6,7 @@ public class PlayerData
     public int hotspots_count;
     public int visited_count;
     public string player_color;
-    public string player_character;
+    public string player_character = "char1";
     public float progress;
 
     public Hotspot FindHotspot(int id)
