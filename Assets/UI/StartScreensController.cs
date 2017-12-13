@@ -4,16 +4,20 @@ using UnityEngine;
 using System.IO;
 
 public class StartScreensController : MonoBehaviour {
+    private GameObject firstScreen;
 
-    public GameObject firstScreen;
-
-    public void call () {
-        if (File.Exists(Application.persistentDataPath + "/playerData.dat"))
+    public void controllFirstScreen () {
+        if (DataController.Instance.player_data.registrationCompleted == true)
         {
             firstScreen = transform.GetChild(0).gameObject;
             firstScreen.SetActive(false);
         }
     }
-	
+
+	public void MarkRegistrationCompleted()
+    {
+        DataController.Instance.player_data.registrationCompleted = true;
+        DataController.Instance.Save();
+    }
 	
 }

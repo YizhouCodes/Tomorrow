@@ -8,6 +8,7 @@ public class PlayerData
     public string player_color;
     public string player_character = "char1";
     public float progress;
+    public bool registrationCompleted = false;
 
     public Hotspot FindHotspot(int id)
     {
