@@ -3,7 +3,8 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public class CharacterSelected : MonoBehaviour {
-    public GameObject Char1, Char2, Char3, Char4, Char5, Char6;
+
+    public GameObject char1, char2, char3, char4, char5, char6;
     // Use this for initialization
     public void Start () {
         HideOtherCharacters(DataController.Instance.player_data.player_character);
@@ -11,37 +12,17 @@ public class CharacterSelected : MonoBehaviour {
 
     private void HideOtherCharacters(string activeCharacter)
     {
-        Char1.SetActive(false);
-        Char2.SetActive(false);
-        Char3.SetActive(false);
-        Char4.SetActive(false);
-        Char5.SetActive(false);
-        Char6.SetActive(false);
+        GameObject[] objs = { char1, char2, char3, char4, char5, char6 };
 
-
-        if (activeCharacter.CompareTo("char1") == 0)
+        int i = 1;
+        foreach(GameObject obj in objs)
         {
-            Char1.SetActive(true);
-        }
-        else if (activeCharacter.CompareTo("char2") == 0)
-        {
-            Char2.SetActive(true);
-        }
-        else if (activeCharacter.CompareTo("char3") == 0)
-        {
-            Char3.SetActive(true);
-        }
-        else if (activeCharacter.CompareTo("char4") == 0)
-        {
-            Char4.SetActive(true);
-        }
-        else if (activeCharacter.CompareTo("char5") == 0)
-        {
-            Char5.SetActive(true);
-        }
-        else if (activeCharacter.CompareTo("char6") == 0)
-        {
-            Char6.SetActive(true);
+            obj.SetActive(false);
+            if (activeCharacter.Equals("char" + i.ToString()))
+            {
+                obj.SetActive(true);
+            }
+            i++;
         }
     }
 }
