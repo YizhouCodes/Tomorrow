@@ -52,12 +52,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 10a9e23c85672d74da9bd468cee71aee, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Char1: {fileID: 0}
-  Char2: {fileID: 0}
-  Char3: {fileID: 0}
-  Char4: {fileID: 0}
-  Char5: {fileID: 0}
-  Char6: {fileID: 0}
+  char1: {fileID: 0}
+  char2: {fileID: 0}
+  char3: {fileID: 0}
+  char4: {fileID: 0}
+  char5: {fileID: 0}
+  char6: {fileID: 0}
 --- !u!114 &114788807827943794
 MonoBehaviour:
   m_ObjectHideFlags: 1
