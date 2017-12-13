@@ -76,5 +76,5 @@ MonoBehaviour:
   minZoomHeight: 10
   maxZoomHeight: 150
   cameraDistance: 30
-  radius: 2000
-  refreshTreshold: 100
+  radius: 3000
+  refreshTreshold: 2000
