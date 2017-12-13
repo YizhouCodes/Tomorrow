@@ -30,7 +30,10 @@ public class NearestHotspot : MonoBehaviour {
 	{
         distances = new Dictionary<float, Hotspot>();
         foreach (Hotspot hotspot in hotspots) {
-			distances.Add(CalculateDistance(hotspot), hotspot);
+            if(hotspot.visited == false)
+            {
+                distances.Add(CalculateDistance(hotspot), hotspot);
+            }
 		}
 		minimumDistance = distances.Keys.Min();
 		closestHotspot = distances[distances.Keys.Min()];
