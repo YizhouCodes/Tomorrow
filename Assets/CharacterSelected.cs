@@ -5,7 +5,7 @@ using UnityEngine;
 public class CharacterSelected : MonoBehaviour {
     public GameObject Char1, Char2, Char3, Char4, Char5, Char6;
     // Use this for initialization
-    public void UpdateObject () {
+    public void Start () {
         HideOtherCharacters(DataController.Instance.player_data.player_character);
     }
 
