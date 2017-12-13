@@ -13,9 +13,9 @@ public class DataController : GenericSingleton<DataController> {
 
 	// Calls Load() function
 	void Awake () {
-        StartScreensController ssc = obj.AddComponent<StartScreensController>();
-        ssc.call();
 		Load();
+        StartScreensController ssc = obj.AddComponent<StartScreensController>();
+        ssc.controllFirstScreen();
 		// Debug.Log("USERNAME: " + player_data.username);
 		// SetUsername setting = new SetUsername();
 		// setting.call("Tomorrow!");
