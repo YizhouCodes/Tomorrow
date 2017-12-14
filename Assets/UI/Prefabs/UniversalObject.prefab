@@ -60,6 +60,7 @@ MonoBehaviour:
     player_color: 
     player_character: 
     progress: 0
+    registrationCompleted: 0
   obj: {fileID: 0}
 --- !u!114 &114716576243290568
 MonoBehaviour:
