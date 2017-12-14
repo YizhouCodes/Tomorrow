@@ -22,7 +22,7 @@ public class NearestHotspot : MonoBehaviour {
     {
         Call();
         Vector3 hotspot_pos = map.MapPositionAt((float)closestHotspot.longitude, (float)closestHotspot.latitude);
-        compass.LookAt(hotspot_pos);
+        compass.LookAt(hotspot_pos, Vector3.up);
     }
 
     // Finds the minimum distance to the nearest hotspot and the hotspot itself
