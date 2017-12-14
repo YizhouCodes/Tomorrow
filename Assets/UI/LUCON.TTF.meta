@@ -1,0 +1,21 @@
+fileFormatVersion: 2
+guid: 1d6b2ec9ffb94fb4c919ec248b2dfac0
+timeCreated: 1513266147
+licenseType: Free
+TrueTypeFontImporter:
+  serializedVersion: 4
+  fontSize: 16
+  forceTextureCase: -2
+  characterSpacing: 0
+  characterPadding: 1
+  includeFontData: 1
+  fontName: Lucida Console
+  fontNames:
+  - Lucida Console
+  fallbackFontReferences: []
+  customCharacters: 
+  fontRenderingMode: 0
+  ascentCalculationMode: 1
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
