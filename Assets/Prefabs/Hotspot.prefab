@@ -104,7 +104,7 @@ Animator:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1420265452857288}
-  m_Enabled: 1
+  m_Enabled: 0
   m_Avatar: {fileID: 0}
   m_Controller: {fileID: 9100000, guid: 6ab981348b1db3049adb2de0fe9c88af, type: 2}
   m_CullingMode: 0
@@ -157,7 +157,7 @@ MonoBehaviour:
   isRotating: 1
   isFloating: 1
   isScaling: 1
-  rotationAngle: {x: 0, y: 0, z: 10}
+  rotationAngle: {x: -90, y: 0, z: 10}
   rotationSpeed: 10
   floatSpeed: 0.04
   floatRate: 0.5
