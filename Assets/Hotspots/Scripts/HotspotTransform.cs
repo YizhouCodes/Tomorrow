@@ -31,13 +31,10 @@ public class HotspotTransform : MonoBehaviour {
         if (distance <= 5)
         {
             gameObject.GetComponent<Renderer>().material.color = Color.red;
-            transform.Rotate(new Vector3(15, 30, 45) * Time.deltaTime);
         }
         else
         {
             gameObject.GetComponent<Renderer>().material.color = Color.blue;
-            Vector3 cur = new Vector3(0,0,0);
-            transform.eulerAngles = cur;
         }
     }
 }
