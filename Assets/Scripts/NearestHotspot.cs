@@ -7,7 +7,7 @@ using System.Linq;
 public class NearestHotspot : MonoBehaviour {
 	public MapFunctionality map;
 	public GameObject player;
-    public Transform compass;
+    public GameObject compass;
 
     private Hotspot[] hotspots;
 	private Dictionary<float, Hotspot> distances;
@@ -21,8 +21,13 @@ public class NearestHotspot : MonoBehaviour {
     private void Update()
     {
         Call();
+				if (distances.Count == 0) // Deactivates compass if all hotspots are already visited
+				{
+					compass.SetActive(false);
+					return;
+				}
         Vector3 hotspot_pos = map.MapPositionAt((float)closestHotspot.longitude, (float)closestHotspot.latitude);
-        compass.LookAt(hotspot_pos, Vector3.up);
+        compass.transform.LookAt(hotspot_pos, Vector3.up);
     }
 
     // Finds the minimum distance to the nearest hotspot and the hotspot itself
@@ -35,6 +40,7 @@ public class NearestHotspot : MonoBehaviour {
                 distances.Add(CalculateDistance(hotspot), hotspot);
             }
 		}
+		if (distances.Count == 0) return;
 		minimumDistance = distances.Keys.Min();
 		closestHotspot = distances[distances.Keys.Min()];
 	}
