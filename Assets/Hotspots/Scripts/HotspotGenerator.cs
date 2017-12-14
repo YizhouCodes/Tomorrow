@@ -27,6 +27,7 @@ public class HotspotGenerator : MonoBehaviour {
         foreach (Hotspot hotspot in hotspots)
         {
             Vector3 position = map.MapPositionAt((float)hotspot.longitude, (float)hotspot.latitude);
+            position[1] += 5;
             CreateHotspot(position, hotspot.id);
         }
     }
