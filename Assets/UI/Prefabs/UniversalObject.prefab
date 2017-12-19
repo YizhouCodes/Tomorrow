@@ -53,9 +53,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f9609164e504c1f4db71d447eab4c56b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  regScreens:
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
   screens:
-  - {fileID: 0}
-  - {fileID: 0}
   - {fileID: 0}
   - {fileID: 0}
   - {fileID: 0}
