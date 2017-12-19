@@ -9,7 +9,6 @@ public class AppStateController : MonoBehaviour {
 
     // Use this for initialization
     void Awake () {
-        InputManager.Instance.back += Close;
         InputManager.Instance.back += GoBack;
     }
 
@@ -24,6 +23,10 @@ public class AppStateController : MonoBehaviour {
         {
             regScreens[1].SetActive(true);
             regScreens[2].SetActive(false);
+        }
+        else
+        {
+            Close();
         }
     }
 
