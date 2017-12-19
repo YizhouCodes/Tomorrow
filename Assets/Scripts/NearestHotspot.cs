@@ -30,7 +30,7 @@ public class NearestHotspot : MonoBehaviour {
         Vector3 hotspot_pos = map.MapPositionAt((float)closestHotspot.longitude, (float)closestHotspot.latitude);
         compass.transform.LookAt(hotspot_pos, Vector3.up);
         
-        if(minimumDistance > 1200)
+        if(minimumDistance > 140)
         {
             tooFar.SetActive(true);
         }
@@ -79,7 +79,7 @@ public class NearestHotspot : MonoBehaviour {
 	private float CalculateDistance (Hotspot hotspot)
 	{
 		Vector3 hotspot_pos = map.MapPositionAt((float)hotspot.longitude, (float)hotspot.latitude);
-		Vector3 player_pos = map.transform.GetChild(0).InverseTransformPoint(player.transform.position);
+		Vector3 player_pos = player.transform.position;
 		return Vector3.Distance(hotspot_pos, player_pos);
 	}
 }
