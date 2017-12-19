@@ -25,11 +25,11 @@ public class NearestHotspot : MonoBehaviour {
 		if (distances.Count == 0) // Deactivates compass if all hotspots are already visited
 		{
 			compass.SetActive(false);
+			tooFar.SetActive(false);
 			return;
 		}
         Vector3 hotspot_pos = map.MapPositionAt((float)closestHotspot.longitude, (float)closestHotspot.latitude);
         compass.transform.LookAt(hotspot_pos, Vector3.up);
-        
         if(minimumDistance > 140)
         {
             tooFar.SetActive(true);
