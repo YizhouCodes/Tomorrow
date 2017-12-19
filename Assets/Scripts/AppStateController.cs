@@ -25,7 +25,6 @@ public class AppStateController : MonoBehaviour {
             regScreens[1].SetActive(true);
             regScreens[2].SetActive(false);
         }
-        Application.Quit();
     }
 
     public void Close()
