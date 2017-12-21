@@ -9,105 +9,85 @@
       "visited": false
     },
     {
-      "id": 100,
-      "name": "The Tunnel",
-      "description": "This is THE TUNNEL",
-      "latitude": 61.494117,
-      "longitude": 23.778432,
-      "visited": false
-    },
-    {
       "id": 1,
       "name": "Pinni B Entrance",
-      "description": "",
       "latitude": 61.493299,
       "longitude": 23.777682,
       "visited": false
     },
     {
       "id": 2,
-      "name": "Obelisk",
-      "description": "",
-      "latitude": 61.493710,
-      "longitude": 23.777932,
-      "visited": false
-    },
-    {
-      "id": 3,
       "name": "Pinni A Entrance",
-      "description": "",
       "latitude": 61.493994,
       "longitude": 23.778075,
       "visited": false
     },
     {
-      "id": 4,
+      "id": 3,
       "name": "Main building Entrance",
-      "description": "",
       "latitude": 61.494389,
       "longitude": 23.780310,
       "visited": false
     },
     {
-      "id": 5,
+      "id": 4,
       "name": "Linna Entrance",
-      "description": "",
       "latitude": 61.494982,
       "longitude": 23.778025,
       "visited": false
     },
     {
-      "id": 6,
+      "id": 5,
       "name": "Uta health services",
-      "description": "",
       "latitude": 61.494952,
       "longitude": 23.777371,
       "visited": false
     },
     {
-      "id": 7,
+      "id": 6,
       "name": "Uta student council",
-      "description": "",
       "latitude": 61.495139,
       "longitude": 23.779610,
       "visited": false
     },
     {
-      "id": 8,
+      "id": 7,
       "name": "Uta amphitheatre",
-      "description": "",
       "latitude": 61.493136,
       "longitude": 23.778121,
       "visited": false
     },
     {
-      "id": 9,
+      "id": 8,
       "name": "Uta parking lot",
-      "description": "",
       "latitude": 61.492678,
       "longitude": 23.779312,
       "visited": false
     },
     {
-      "id": 10,
+      "id": 9,
       "name": "Tieto Pinni",
-      "description": "",
       "latitude": 61.492868,
       "longitude": 23.778332,
       "visited": false
     },
     {
-      "id": 11,
+      "id": 10,
       "name": "Atalpa",
-      "description": "",
       "latitude": 61.492697,
       "longitude": 23.780845,
       "visited": false
     },
     {
+      "id": 11,
+      "name": "Obelisk",
+      "latitude": 61.493710,
+      "longitude": 23.777932,
+      "visited": false
+    },
+    {
       "id": 12,
       "name": "Main Entrance statue",
-      "description": "",
       "latitude": 61.494630,
       "longitude": 23.780170,
       "visited": false
@@ -115,7 +95,6 @@
     {
       "id": 13,
       "name": "Uta tennis field",
-      "description": "",
       "latitude": 61.493178,
       "longitude": 23.779976,
       "visited": false
@@ -123,7 +102,6 @@
     {
       "id": 14,
       "name": "Tampere talo",
-      "description": "",
       "latitude": 61.496019,
       "longitude": 23.780656,
       "visited": false
@@ -131,7 +109,6 @@
     {
       "id": 15,
       "name": "Sorsa puisto",
-      "description": "",
       "latitude": 61.497493,
       "longitude": 23.782794,
       "visited": false
@@ -139,9 +116,246 @@
     {
       "id": 16,
       "name": "TOAS",
-      "description": "",
       "latitude": 61.491148,
       "longitude": 23.784268,
+      "visited": false
+    },
+    {
+      "id": 17,
+      "name": "The Tunnel",
+      "latitude": 61.494117,
+      "longitude": 23.778432,
+      "visited": false
+    },
+    {
+      "id": 18,
+      "name": "Main building Entrance",
+      "latitude": 61.449979,
+      "longitude": 23.859825,
+      "visited": false
+    },
+    {
+      "id": 19,
+      "name": "Festia Entrance",
+      "latitude": 61.449374,
+      "longitude": 23.860598,
+      "visited": false
+    },
+    {
+      "id": 20,
+      "name": "Wavebreaker",
+      "latitude": 61.448789,
+      "longitude": 23.854991,
+      "visited": false
+    },
+    {
+      "id": 21,
+      "name": "Map",
+      "latitude": 61.449250,
+      "longitude": 23.857205,
+      "visited": false
+    },
+    {
+      "id": 22,
+      "name": "Parking hall",
+      "latitude": 61.449026,
+      "longitude": 23.857453,
+      "visited": false
+    },
+    {
+      "id": 23,
+      "name": "Juvenes Restaurant",
+      "latitude": 61.448986,
+      "longitude": 23.858472,
+      "visited": false
+    },
+    {
+      "id": 24,
+      "name": "Tamppi Arena",
+      "latitude": 61.449593,
+      "longitude": 23.861704,
+      "visited": false
+    },
+    {
+      "id": 25,
+      "name": "YTHS",
+      "latitude": 61.449158,
+      "longitude": 23.859147,
+      "visited": false
+    },
+    {
+      "id": 26,
+      "name": "Tietotalo",
+      "latitude": 61.449736,
+      "longitude": 23.856884,
+      "visited": false
+    },
+    {
+      "id": 27,
+      "name": "Rakennustalo",
+      "latitude": 61.450537,
+      "longitude": 23.859311,
+      "visited": false
+    },
+    {
+      "id": 28,
+      "name": "Prisma Obelisk",
+      "latitude": 61.449340,
+      "longitude": 23.856022,
+      "visited": false
+    },
+    {
+      "id": 29,
+      "name": "TUT Student Council",
+      "latitude": 61.449719,
+      "longitude": 23.854617,
+      "visited": false
+    },
+    {
+      "id": 30,
+      "name": "Grass Field",
+      "latitude": 61.449678,
+      "longitude": 23.857975,
+      "visited": false
+    },
+    {
+      "id": 31,
+      "name": "Underpass",
+      "latitude": 61.449355,
+      "longitude": 23.853987,
+      "visited": false
+    },
+    {
+      "id": 32,
+      "name": "Duo Mall",
+      "latitude": 61.450621,
+      "longitude": 23.849665,
+      "visited": false
+    },
+    {
+      "id": 33,
+      "name": "Ahvenisjärvi Dock",
+      "latitude": 61.448781,
+      "longitude": 23.846794,
+      "visited": false
+    },
+    {
+      "id": 34,
+      "name": "Pub Golden Monkey",
+      "latitude": 61.451798,
+      "longitude": 23.847863,
+      "visited": false
+    },
+    {
+      "id": 35,
+      "name": "Mikontalo",
+      "latitude": 61.446570,
+      "longitude": 23.853044,
+      "visited": false
+    },
+    {
+      "id": 36,
+      "name": "TUT Parking Lot",
+      "latitude": 61.449220,
+      "longitude": 23.862926,
+      "visited": false
+    },
+    {
+      "id": 37,
+      "name": "TUT Chapel",
+      "latitude": 61.449244,
+      "longitude": 23.860703,
+      "visited": false
+    },
+    {
+      "id": 38,
+      "name": "Teekkarisauna",
+      "latitude": 61.452625,
+      "longitude": 23.859988,
+      "visited": false
+    },
+    {
+      "id": 39,
+      "name": "It rotates after all",
+      "latitude": 61.449928,
+      "longitude": 23.859780,
+      "visited": false
+    },
+    {
+      "id": 40,
+      "name": "TUT Bus Stop",
+      "latitude": 61.449757,
+      "longitude": 23.854296,
+      "visited": false
+    },
+    {
+      "id": 41,
+      "name": "TAMK main entrance",
+      "latitude": 61.503421,
+      "longitude": 23.808463,
+      "visited": false
+    },
+    {
+      "id": 42,
+      "name": "TAMK C wing entrance",
+      "latitude": 61.503475,
+      "longitude": 23.808174,
+      "visited": false
+    },
+    {
+      "id": 43,
+      "name": "TAMK courtyard",
+      "latitude": 61.503675,
+      "longitude": 23.809702,
+      "visited": false
+    },
+    {
+      "id": 44,
+      "name": "TAMK Parking lot",
+      "latitude": 61.502743,
+      "longitude": 23.807133,
+      "visited": false
+    },
+    {
+      "id": 45,
+      "name": "TAMKO Office",
+      "latitude": 61.503787,
+      "longitude": 23.805835,
+      "visited": false
+    },
+    {
+      "id": 46,
+      "name": "Unipoli Sport TAMK",
+      "latitude": 61.503681,
+      "longitude": 23.806795,
+      "visited": false
+    },
+    {
+      "id": 47,
+      "name": "TAMK Feeding grounds entrance",
+      "latitude": 61.504234,
+      "longitude": 23.809330,
+      "visited": false
+    },
+    {
+      "id": 48,
+      "name": "TAMK R wing entrance",
+      "latitude": 61.504802,
+      "longitude": 23.810925,
+      "visited": false
+    },
+    {
+      "id": 49,
+      "name": "TAMK bus stop 1",
+      "latitude": 61.502250,
+      "longitude": 23.807924,
+      "visited": false
+    },
+    {
+      "id": 50,
+      "name": "TAMK bus stop 2",
+      "latitude": 61.502439,
+      "longitude": 23.806202,
       "visited": false
     }
   ]
