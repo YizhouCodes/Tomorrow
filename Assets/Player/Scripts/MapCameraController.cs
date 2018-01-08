@@ -9,10 +9,11 @@ public class MapCameraController : MonoBehaviour
     public Transform playerTransform;
     public Transform cameraTransform;
     public MapFunctionality map;
+    public Transform mapBase;
 
-    [Range(0, 5)]
+    [Range(0, 15)]
     public float lookOverHeight;
-    [Range(0, 10)]
+    [Range(0, 30)]
     public float minZoomHeight;
     [Range(10, 1000)]
     public float maxZoomHeight;
@@ -105,6 +106,7 @@ public class MapCameraController : MonoBehaviour
         {
             lastPosition = map.gameObject.transform.GetChild(0).InverseTransformPoint(transform.position);
             map.ShowMapArea(transform.position, radius);
+            mapBase.position = new Vector3(transform.position.x, mapBase.position.y, transform.position.z);
         }
     }
 
