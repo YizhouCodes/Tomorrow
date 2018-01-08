@@ -9,16 +9,20 @@ namespace Maps{
         Vector3 Center;
         [HideInInspector, SerializeField]
         Way[] Buildings, Areas, Lines;
-        
-        public Color building;
-        public Color campusBuilding;
-        public Color greenery;
-        public Color water;
-        public Color ground;
-        public Color road;
+
+        public Material building;
+        public Material campusBuilding;
+        public Material greenery;
+        public Material water;
+        public Material ground;
+        public Material road;
+
+        public GameObject[] greeneryObjects;
 
         [Range(1, 10)]
         public float buildingHeightMultiplier = 1;
+        [Range(0, 1000)]
+        public float minClutterArea = 1;
 
         Material[] materials;
         Transform mapObjects;
@@ -57,8 +61,13 @@ namespace Maps{
             {
                 if (Vector3.Distance(area.Center - Center, position) < radius)
                 {
-                    PrimeObject(area, area.Center, mapObjects).GetComponent<MeshFilter>().mesh =
+                    GameObject go = PrimeObject(area, area.Center, mapObjects);
+                    go.GetComponent<MeshFilter>().mesh =
                         MeshBuilder.FlatMeshFromOutline(GetLocalVectors(area.Nodes, area.Center), area.Height);
+                    if (area.Type == Way.WayType.Greenery)
+                    {
+                        ClutterArea(go, greeneryObjects);
+                    }
                 }
             }
             foreach (Way line in Lines)
@@ -114,6 +123,32 @@ namespace Maps{
             return go;
         }
 
+        void ClutterArea(GameObject go, GameObject[] clutter)
+        {
+            Mesh mesh = go.GetComponent<MeshFilter>().mesh;
+            Vector3[] vertices = mesh.vertices;
+            int[] indices = mesh.triangles;
+            for (int i = 0; i < indices.Length; i += 3)
+            {
+                Vector3 a = vertices[indices[i]];
+                Vector3 b = vertices[indices[i + 1]];
+                Vector3 c = vertices[indices[i + 2]];
+
+                float area = Vector3.Magnitude(b - a) * Vector3.Magnitude(c - a) / 2;
+                if (area > minClutterArea * 10)
+                {
+                    float r1 = UnityEngine.Random.value;
+                    float r2 = UnityEngine.Random.value;
+                    Vector3 point = Vector3.Scale(new Vector3(
+                        (1 - Mathf.Sqrt(r1)) * a.x + (Mathf.Sqrt(r1) * (1 - r2)) * b.x + (Mathf.Sqrt(r1) * r2) * c.x,
+                        a.y,
+                        (1 - Mathf.Sqrt(r1)) * a.z + (Mathf.Sqrt(r1) * (1 - r2)) * b.z + (Mathf.Sqrt(r1) * r2) * c.z), go.transform.lossyScale);
+                    Transform g = Instantiate(clutter[UnityEngine.Random.Range(0, clutter.Length - 1)], go.transform.position + point, Quaternion.identity, go.transform).transform;
+                    g.localScale *= UnityEngine.Random.Range(0.5f, 1.5f);
+                }
+            }
+        }
+
         Transform PrimeTransform(string name, Vector3 scale, Transform parent)
         {
             Transform go = new GameObject(name).transform;
@@ -124,14 +159,7 @@ namespace Maps{
 
         void primeMaterials()
         {
-            materials = new Material[6];
-            Color[] colors = new Color[] {building, campusBuilding, greenery, water, ground, road};
-            for(int i = 0; i < colors.Length; i++)
-            {
-                Material material = new Material(Shader.Find("Standard"));
-                material.SetColor("_Color", colors[i]);
-                materials[i] = material;
-            }
+            materials = new Material[] { building, campusBuilding, greenery, water, ground, road };
         }
 
         void primeMapObjects()
