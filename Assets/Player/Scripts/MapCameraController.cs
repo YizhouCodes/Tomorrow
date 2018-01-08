@@ -9,6 +9,7 @@ public class MapCameraController : MonoBehaviour
     public Transform playerTransform;
     public Transform cameraTransform;
     public MapFunctionality map;
+    public Transform mapBase;
 
     [Range(0, 5)]
     public float lookOverHeight;
@@ -105,6 +106,7 @@ public class MapCameraController : MonoBehaviour
         {
             lastPosition = map.gameObject.transform.GetChild(0).InverseTransformPoint(transform.position);
             map.ShowMapArea(transform.position, radius);
+            mapBase.position = new Vector3(transform.position.x, mapBase.position.y, transform.position.z);
         }
     }
 
