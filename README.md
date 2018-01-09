@@ -7,7 +7,7 @@ This software uses publicly available OpenStreetMap data, licensed under the Ope
 ## Team Members
 - [Eero Lempiö](https://github.com/SirFabular)
 - [Aapo Lempiö](https://github.com/AapoLempio)
-- [Yizhou Ye](https://github.com/zhou421513)
+- [Yizhou Ye](https://github.com/YizhouCodes)
 - [Arvin Jenabi](https://github.com/Arvinje)
 - [Imran Pavel](https://github.com/imran-pavel)
 - [Mahmoud Abu Daya](https://github.com/MahmoudAbuDaya)
