@@ -27,7 +27,7 @@ namespace Maps
         };
         private static List<string> campusValues = new List<string>
         {
-            "Tampereen yliopisto","Pirkanmaan ammattikorkeakoulu Oy","Tampereen ammattikorkeakoulu","Tampereen teknillinen yliopisto"
+            "Tampereen yliopisto","Pirkanmaan ammattikorkeakoulu Oy","Tampereen ammattikorkeakoulu","Tampereen teknillinen yliopisto","university"
         };
         private static List<string> buildingValues = new List<string>
         {
