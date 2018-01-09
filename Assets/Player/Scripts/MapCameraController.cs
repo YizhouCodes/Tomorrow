@@ -86,7 +86,7 @@ public class MapCameraController : MonoBehaviour
         Vector3 newPos = map.MapPositionAt(lon, lat);
         Vector3 direction = newPos - transform.position;
         playerTransform.rotation = Quaternion.LookRotation(direction, Vector3.up);
-        StartCoroutine(MovePlayer(newPos, 2f));
+        StartCoroutine(MovePlayer(newPos, 1f));
     }
 
     public void Move(Vector3 direction)
