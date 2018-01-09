@@ -3,43 +3,43 @@
     {
       "id": 1,
       "name": "Pinni B Entrance",
-      "latitude": 61.493299,
-      "longitude": 23.777682,
+      "latitude": 61.493314,
+      "longitude": 23.778032,
       "visited": false
     },
     {
       "id": 2,
       "name": "Pinni A Entrance",
-      "latitude": 61.493994,
-      "longitude": 23.778075,
+      "latitude": 61.494014,
+      "longitude": 23.778215,
       "visited": false
     },
     {
       "id": 3,
       "name": "Main building Entrance",
-      "latitude": 61.494389,
-      "longitude": 23.780310,
+      "latitude": 61.494497,
+      "longitude": 23.780316,
       "visited": false
     },
     {
       "id": 4,
       "name": "Linna Entrance",
-      "latitude": 61.494982,
-      "longitude": 23.778025,
+      "latitude": 61.494937,
+      "longitude": 23.778004,
       "visited": false
     },
     {
       "id": 5,
       "name": "Uta health services",
-      "latitude": 61.494952,
-      "longitude": 23.777371,
+      "latitude": 61.494933,
+      "longitude": 23.777423,
       "visited": false
     },
     {
       "id": 6,
       "name": "Uta student council",
-      "latitude": 61.495139,
-      "longitude": 23.779610,
+      "latitude": 61.495082,
+      "longitude": 23.779754,
       "visited": false
     },
     {
@@ -59,15 +59,15 @@
     {
       "id": 9,
       "name": "Tieto Pinni",
-      "latitude": 61.492868,
-      "longitude": 23.778332,
+      "latitude": 61.492611,
+      "longitude": 23.778677,
       "visited": false
     },
     {
       "id": 10,
       "name": "Atalpa",
-      "latitude": 61.492697,
-      "longitude": 23.780845,
+      "latitude": 61.492733,
+      "longitude": 23.780549,
       "visited": false
     },
     {
@@ -122,8 +122,8 @@
     {
       "id": 18,
       "name": "Main building Entrance",
-      "latitude": 61.449979,
-      "longitude": 23.859825,
+      "latitude": 61.449976,
+      "longitude": 23.859516,
       "visited": false
     },
     {
@@ -283,15 +283,15 @@
     {
       "id": 41,
       "name": "TAMK main entrance",
-      "latitude": 61.503421,
-      "longitude": 23.808463,
+      "latitude": 61.503192,
+      "longitude": 23.808279,
       "visited": false
     },
     {
       "id": 42,
-      "name": "TAMK C wing entrance",
-      "latitude": 61.503475,
-      "longitude": 23.808174,
+      "name": "TAMK C wing entrance", 
+      "latitude": 61.503294,
+      "longitude": 23.808151,
       "visited": false
     },
     {
@@ -325,8 +325,8 @@
     {
       "id": 47,
       "name": "TAMK Feeding grounds entrance",
-      "latitude": 61.504234,
-      "longitude": 23.809330,
+      "latitude": 61.504350,
+      "longitude": 23.809518,
       "visited": false
     },
     {
