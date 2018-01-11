@@ -1,6 +1,9 @@
 # Tomorrow
 A location-based game that lets students of the Tampere universities explore the campuses in the city. This game is developed using Unity3D.
 
+## Builds
+Latest build here: https://drive.google.com/open?id=16EvLtNcD4f_pwjQvkEYVyBmrp9i0Nxwu
+
 ## Map Data
 This software uses publicly available OpenStreetMap data, licensed under the Open Data Commons Open Database License (ODbL) by the OpenStreetMap Foundation (OSMF).
 
