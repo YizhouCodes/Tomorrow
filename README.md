@@ -1,3 +1,5 @@
+﻿![Tomorrow](/Assets/UI/TomorrowLogo.png)
+
 # Tomorrow
 A location-based game that lets students of the Tampere universities explore the campuses in the city. This game is developed using Unity3D.
 
